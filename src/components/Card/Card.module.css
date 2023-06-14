@@ -1,0 +1,86 @@
+@font-face {
+    font-family: 'Rick and Morty';
+    src: url(../../assets/get_schwifty.ttf);
+}
+
+.container{
+    width: 300px;
+    height: auto;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    border-radius: 25px;
+    transition: transform 0.3s ease;
+    margin-left: 5rem;
+    margin-top: 4rem;
+    position: relative;
+    
+}
+
+.container:hover{
+    transform: translateY(-5px);
+}
+
+.img{
+    width: 300px;
+    height: auto;
+}
+
+.container:hover .img{
+    opacity: 0.5;
+}
+
+.info{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 90%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    padding: 16px;
+}
+
+.container:hover .info{
+    opacity: 1;
+}
+
+.name{
+    font-size: 1.2rem;
+    font-weight: bold;
+    font-family: 'Rick and Morty', sans-serif;
+    text-shadow: 0 -2px 5px #0AFF00;
+    color: rgb(6, 147, 202);
+    text-decoration: none;
+}
+
+.description{
+    font-size: 16px;
+}
+
+.btnClose {
+    background-color: white;
+    color: black;
+    font-weight: bold;
+    position: absolute;
+    top: 0.3%;
+    right: 5%;
+    border: none;
+}
+
+.btnClose:hover{
+    background-color: rgb(216, 74, 74);
+}
+
+.btnFav{
+    position: absolute;
+    top:0%;
+    left: 1%;
+    background: none;
+    border: none;
+    font-size: 20px;
+    padding: 0;
+}

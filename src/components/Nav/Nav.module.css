@@ -1,0 +1,34 @@
+.body {
+    text-decoration: none;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+
+
+
+}
+
+.aboutButton,
+.homeButton {
+    border: 0;
+    background-image: linear-gradient(150deg,
+            #0059ff,
+            rgb(0, 255, 42),
+            #49e6ec);
+    font-weight: bold;
+    text-shadow: 1px 1px 0px #000000, 5px 5px 10px #000;
+    border-radius: 8px;
+    display: flex;
+    padding: 8px 16px;
+    margin-left: 8px;
+    font-size: 16px;
+    margin-right: 8px;
+    cursor: pointer;
+}
+
+
+
+.buttonLink {
+    text-decoration: none;
+    color: white;
+}

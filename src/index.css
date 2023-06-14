@@ -1,10 +1,12 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url("./assets/rick-and-morty-netflix-2020-9d.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed
+
 }
 
 code {
