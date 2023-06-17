@@ -1,16 +1,16 @@
-import './App.css';
-import Cards from './components/Cards/Cards';
-import Nav from './components/Nav/Nav';
-import { useState, useEffect } from 'react';
-import axios from 'axios';
-import { Route, Routes, useLocation, useNavigate } from 'react-router-dom';
-import About from './components/About/About';
-import Detail from './components/Detail/Detail';
-import Form from './components/Form/Form';
-import Favorites from './components/Favorites/Favorites';
+import "./App.css";
+import Cards from "./components/Cards/Cards";
+import Nav from "./components/Nav/Nav";
+import { useState, useEffect } from "react";
+import axios from "axios";
+import { Route, Routes, useLocation, useNavigate } from "react-router-dom";
+import About from "./components/About/About";
+import Detail from "./components/Detail/Detail";
+import Form from "./components/Form/Form";
+import Favorites from "./components/Favorites/Favorites";
 
-const email = 'gaby@gmail.com';
-const password = 'asd123';
+const email = "gaby@gmail.com";
+const password = "asd123";
 
 function App() {
   const [characters, setCharacters] = useState([]);
@@ -21,12 +21,12 @@ function App() {
   const login = (userData) => {
     if (userData.email === email && userData.password === password) {
       setAccess(true);
-      navigate('/home');
+      navigate("/home");
     }
   };
 
   useEffect(() => {
-    !access && navigate('/');
+    !access && navigate("/");
   }, [access]);
 
   const onSearch = (id) => {
@@ -36,7 +36,7 @@ function App() {
         if (data.name) {
           setCharacters((oldChars) => [...oldChars, data]);
         } else {
-          window.alert('¡No hay personajes con ese ID!');
+          window.alert("¡No hay personajes con ese ID!");
         }
       });
   };
@@ -49,16 +49,16 @@ function App() {
   };
 
   return (
-    <div className='App'>
-      {location.pathname !== '/' && <Nav onSearch={onSearch} />}
+    <div className="App">
+      {location.pathname !== "/" && <Nav onSearch={onSearch} />}
       <Routes>
         <Route
-          path='/home'
+          path="/home"
           element={<Cards characters={characters} onClose={onClose} />}></Route>
-        <Route path='/about' element={<About />}></Route>
-        <Route path='/detail/:id' element={<Detail />}></Route>
-        <Route path='/' element={<Form login={login} />}></Route>
-        <Route path='/favorites' element={<Favorites />}></Route>
+        <Route path="/about" element={<About />}></Route>
+        <Route path="/detail/:id" element={<Detail />}></Route>
+        <Route path="/" element={<Form login={login} />}></Route>
+        <Route path="/favorites" element={<Favorites />}></Route>
       </Routes>
     </div>
   );
