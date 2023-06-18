@@ -1,19 +1,19 @@
-import axios from 'axios';
-import { useParams } from 'react-router-dom';
-import { useState, useEffect } from 'react';
+import axios from "axios";
+import { useParams } from "react-router-dom";
+import { useState, useEffect } from "react";
 
 const Detail = () => {
   const [character, setCharacter] = useState({});
   const { id } = useParams();
 
   useEffect(() => {
-    axios(`https://rickandmortyapi.com/api/character/${id}`)
+    axios(`http://localhost:3001/rickandmorty/character/${id}`)
       .then((response) => response.data)
       .then((data) => {
         if (data.name) {
           setCharacter(data);
         } else {
-          window.alert('No hay personaje con ese ID');
+          window.alert("No hay personaje con ese ID");
         }
       });
     return setCharacter({});
