@@ -6,9 +6,7 @@ const getCharById = async (req, res) => {
 		const { id } = req.params;
 		const { data } = await axios(`${URL}/${id}`);
 
-		if (!data.name)
-			throw new Error(`Falta datos del personaje con ID: 
-    ${id}`);
+		if (!data.name) throw new Error(`Falta datos del personaje con ID: ${id}`);
 
 		const character = {
 			id: data.id,
