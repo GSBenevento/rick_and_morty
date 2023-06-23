@@ -20,7 +20,9 @@ function App() {
 	const login = async (userData) => {
 		try {
 			const { email, password } = userData;
-			const { data } = await axios(URL + `?email=${email}&password=${password}`);
+			const { data } = await axios(
+				URL + `?email=${email}&password=${password}`
+			);
 			const { access } = data;
 			setAccess(access);
 			access && navigate('/home');
@@ -35,9 +37,18 @@ function App() {
 
 	const onSearch = async (id) => {
 		try {
-			const { data } = await axios(`http://localhost:3001/rickandmorty/character/${id}`);
+			const { data } = await axios(
+				`http://localhost:3001/rickandmorty/character/${id}`
+			);
 			if (data.name) {
-				setCharacters((oldChars) => [...oldChars, data]);
+				const characterExists = characters.some(
+					(character) => character.id === data.id
+				);
+				if (characterExists) {
+					window.alert('¡Este personaje ya está en pantalla!');
+				} else {
+					setCharacters((oldChars) => [...oldChars, data]);
+				}
 			}
 		} catch (error) {
 			alert('¡No hay personajes con ese ID!');
@@ -45,7 +56,9 @@ function App() {
 	};
 
 	const onClose = (id) => {
-		const charactersFiltered = characters.filter((character) => character.id !== Number(id));
+		const charactersFiltered = characters.filter(
+			(character) => character.id !== Number(id)
+		);
 		setCharacters(charactersFiltered);
 	};
 
@@ -53,7 +66,9 @@ function App() {
 		<div className='App'>
 			{location.pathname !== '/' && <Nav onSearch={onSearch} />}
 			<Routes>
-				<Route path='/home' element={<Cards characters={characters} onClose={onClose} />}></Route>
+				<Route
+					path='/home'
+					element={<Cards characters={characters} onClose={onClose} />}></Route>
 				<Route path='/about' element={<About />}></Route>
 				<Route path='/detail/:id' element={<Detail />}></Route>
 				<Route path='/' element={<Form login={login} />}></Route>

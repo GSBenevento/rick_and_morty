@@ -24,11 +24,12 @@
     font-size: 16px;
     margin-right: 8px;
     cursor: pointer;
+    color:white
 }
 
 
 
 .buttonLink {
     text-decoration: none;
-    color: white;
+    color: white
 }
