@@ -32,7 +32,7 @@ export default function Favorites() {
 				<option value={'D'}>Descendente</option>
 			</select>
 			<button onClick={handleReset}>Reset Filters</button>
-			<div className={style.container}>
+			<div className={style.containerFav}>
 				{myFavorites?.map((fav) => {
 					return (
 						<Card
@@ -49,11 +49,3 @@ export default function Favorites() {
 		</div>
 	);
 }
-
-// const mapStateToProps = (state) => {
-//   return {
-//     myFavorites: state.myFavorites,
-//   };
-// };
-
-// export default connect(mapStateToProps, null)(Favorites);
