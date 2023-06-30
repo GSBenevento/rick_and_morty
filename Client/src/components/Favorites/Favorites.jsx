@@ -31,7 +31,9 @@ export default function Favorites() {
 				<option value={'A'}>Ascendente</option>
 				<option value={'D'}>Descendente</option>
 			</select>
-			<button onClick={handleReset}>Reset Filters</button>
+			<button className={style.button} onClick={handleReset}>
+				Reset Filters
+			</button>
 			<div className={style.containerFav}>
 				{myFavorites?.map((fav) => {
 					return (
